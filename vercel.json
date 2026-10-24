@@ -9,8 +9,7 @@
     "api": {
       "root": "backend/",
       "framework": "express",
-      "entrypoint": "src/app.js",
-      "maxDuration": 30
+      "entrypoint": "src/app.js"
     }
   },
   "rewrites": [
