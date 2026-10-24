@@ -20,6 +20,8 @@ npm run dev
 
 Open http://localhost:5173. The API is http://localhost:8000.
 
+The live site is https://job-portal-pied-omega.vercel.app. Source: https://github.com/LENGND123/job-portal.
+
 ## Demo accounts
 
 | Role | Email | Password |
