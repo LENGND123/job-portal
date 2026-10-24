@@ -17,6 +17,21 @@ dotenv.config({ path: path.join(backendRoot, ".env") });
 const app = express();
 app.set("trust proxy", 1);
 
+app.use(async (req, res, next) => {
+  try {
+    await ready();
+    next();
+  } catch (error) {
+    console.error(error);
+    if (!res.headersSent) {
+      res.status(500).json({
+        success: false,
+        message: "The server could not reach the database.",
+      });
+    }
+  }
+});
+
 const allowedOrigins = [
   process.env.CLIENT_ORIGIN || "http://localhost:5173",
   "http://localhost:5173",
@@ -77,3 +92,4 @@ export function ready() {
 }
 
 export { app };
+export default app;
